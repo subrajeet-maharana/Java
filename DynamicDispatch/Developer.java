@@ -1,4 +1,3 @@
-package DynamicDispatch;
 public class Developer extends Employee {
 
     public void insert() {

@@ -1,5 +1,3 @@
-package DynamicDispatch;
-
 public abstract class Employee {
 
     private int id;
