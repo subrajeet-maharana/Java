@@ -4,7 +4,7 @@ class User {
   String name;
   String email;
   int age;
-  public static int totalUsers = 0;
+  public static int totalUsers = 0; //only one for the entire class
 
   User() {
     name = "Default Name";
