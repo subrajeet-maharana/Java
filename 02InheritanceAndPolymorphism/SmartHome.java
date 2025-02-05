@@ -37,6 +37,23 @@ class SmartSpeaker extends SmartDevice {
   }
 }
 
+class SmartLight extends SmartDevice {
+  int brightness=0;
+
+  SmartLight (String name, boolean status, int lumen) {
+    super(name, status);
+    brightness = lumen;
+  }
+
+  protected void setBrightness (int lumen) {
+    this.brightness = lumen;
+  }
+
+  protected String getStatus() {
+    return "SmartLight [" + deviceName + "] is [" + (isOn?"ON":"OFF") + "] at [" + brightness + "]%";
+  }
+}
+
 public class SmartHome {
   public static void main(String[] args) {
     SmartDevice dev1 = new SmartDevice("My Sweet Device", false);
@@ -46,5 +63,9 @@ public class SmartHome {
     speak1.setVolume(56);
     String speakStatus = speak1.getStatus();
     System.out.println(speakStatus);
+    SmartLight light1 = new SmartLight("My Bright Light", false, 56);
+    light1.setBrightness(80);
+    String lightStatus = light1.getStatus();
+    System.out.println(lightStatus);
   }
 }
