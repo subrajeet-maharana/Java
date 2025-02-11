@@ -1,3 +1,5 @@
+import java.util.*;
+
 class SmartDevice {
   String deviceName = "My Smart Device";
   boolean isOn = false;
@@ -56,16 +58,33 @@ class SmartLight extends SmartDevice {
 
 public class SmartHome {
   public static void main(String[] args) {
-    SmartDevice dev1 = new SmartDevice("My Sweet Device", false);
-    String status = dev1.getStatus();
-    System.out.println(status);
-    SmartSpeaker speak1 = new SmartSpeaker("My Sweet Speaker", false, 15);
-    speak1.setVolume(56);
-    String speakStatus = speak1.getStatus();
-    System.out.println(speakStatus);
-    SmartLight light1 = new SmartLight("My Bright Light", false, 56);
-    light1.setBrightness(80);
-    String lightStatus = light1.getStatus();
-    System.out.println(lightStatus);
+    List<SmartDevice> devices = new ArrayList<>();
+    for(int i=0;i<10;++i) {
+      if(i%3!=0){
+        devices.add(new SmartSpeaker("Speaker " + (i+1), false, 48+i*2));
+      }
+      else {
+        devices.add(new SmartLight("Light " + (i+1), false, 27+i*3));
+      }
+    }
+
+    for(int i=0;i<10;++i){
+      String status = devices.get(i).getStatus();
+      System.out.println(status);
+    }
+
+    for(SmartDevice obj : devices){
+      obj.turnOn();
+      if(obj instanceof SmartSpeaker) {
+        SmartSpeaker speaker = (SmartSpeaker) obj;
+        speaker.setVolume(30);
+      }
+      else {
+        SmartLight speaker = (SmartLight) obj;
+        speaker.setBrightness(50);
+      }
+      String status = obj.getStatus();
+      System.out.println(status);
+    }
   }
 }
