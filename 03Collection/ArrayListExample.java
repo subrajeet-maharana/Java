@@ -9,5 +9,10 @@ public class ArrayListExample {
     ls.remove("Amit");
     ls.add("Chavva");
     System.out.println(ls);
+
+    Iterator<String> itr = ls.iterator();
+    while(itr.hasNext()) {
+      System.out.println(itr.next());
+    }
   }
 }
