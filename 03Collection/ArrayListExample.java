@@ -10,9 +10,15 @@ public class ArrayListExample {
     ls.add("Chavva");
     System.out.println(ls);
 
+    // Iteration using Iterator Class
     Iterator<String> itr = ls.iterator();
     while(itr.hasNext()) {
       System.out.println(itr.next());
+    }
+
+    // Iteration using for-each loop
+    for(String name:ls) {
+      System.out.println(name);
     }
   }
 }
