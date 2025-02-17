@@ -20,5 +20,10 @@ public class ArrayListExample {
     for(String name:ls) {
       System.out.println(name);
     }
+
+    //Getter and Setter
+    System.out.println("The value at index 1 is: " + ls.get(1));
+    ls.set(1, "Warner Bros");
+    System.out.println("The value at index 1 after setting is: " + ls.get(1));
   }
 }
