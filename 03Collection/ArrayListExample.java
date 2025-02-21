@@ -29,5 +29,16 @@ public class ArrayListExample {
     //Sorting
     Collections.sort(names);
     System.out.println("After Sorting: " + names);
+    
+    ArrayList<Integer> nums = new ArrayList<Integer>();
+    nums.add(-34);
+    nums.add(-90);
+    nums.add(245);
+    nums.add(123);
+
+    //Sorting
+    System.out.println("Before Sorting: " + nums);
+    Collections.sort(nums);
+    System.out.println("After Sorting: " + nums);
   }
 }
