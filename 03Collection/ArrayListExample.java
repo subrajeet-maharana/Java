@@ -1,5 +1,17 @@
 import java.util.*;
 
+class Student {
+  String name;
+  int rollNo;
+  double cgpa;
+
+  Student(String name, int rollNo, double cgpa) {
+    this.name = name;
+    this.rollNo = rollNo;
+    this.cgpa = cgpa;
+  }
+}
+
 public class ArrayListExample {
   public static void main(String[] args) {
     ArrayList<String> names = new ArrayList<String>();
@@ -57,5 +69,23 @@ public class ArrayListExample {
     System.out.println("Before Sorting: " + nums);
     Collections.sort(nums);
     System.out.println("After Sorting: " + nums);
+
+    //Student List 
+    Student s1 = new Student("Subrajeet Maharana", 34, 8.22);
+    Student s2 = new Student("Hanook Sir", 93, 6.82);
+    Student s3 = new Student("Ritik Patidar", 45, 8.02);
+    Student s4 = new Student("Akshat Sharma", 05, 7.82);
+
+    ArrayList<Student> students = new ArrayList<Student>();
+    students.add(s1);
+    students.add(s2);
+    students.add(s3);
+    students.add(s4);
+
+    Iterator<Student> studentItr = students.iterator();
+    while(studentItr.hasNext()){
+      Student std = (Student) studentItr.next();
+      System.out.println("Name: " + std.name + " -- Roll No: " + std.rollNo + " -- CGPA: " + std.cgpa);
+    }
   }
 }
