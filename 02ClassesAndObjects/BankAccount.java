@@ -25,5 +25,7 @@ public class BankAccount {
     newAcc.deposit(8994);
     newAcc.withdraw(500000);
     newAcc.withdraw(8457);
+
+    new BankAccount(); // anonymous obj, created in heap but no stack traced
   }
 }
