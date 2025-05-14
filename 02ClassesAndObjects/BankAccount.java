@@ -6,13 +6,17 @@ public class BankAccount {
     System.out.println("Bank Account created successfully with balance: " + balance);
   }
 
+  public BankAccount() {
+    // TODO Auto-generated constructor stub
+  }
+
   public void deposit(int amount) {
     balance = balance + amount;
     System.out.println("Updated Balance after deposit: " + balance);
   }
 
   public void withdraw(int amount) {
-    if (amount>balance) {
+    if (amount > balance) {
       System.err.println("Insufficient Balance");
       return;
     }

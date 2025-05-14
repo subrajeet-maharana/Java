@@ -1,5 +1,3 @@
-package JavaSwing;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
