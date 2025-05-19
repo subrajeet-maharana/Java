@@ -1,4 +1,6 @@
+
 public class SumThread implements Runnable {
+
     private int start;
     private int end;
     private Thread t;
@@ -14,8 +16,9 @@ public class SumThread implements Runnable {
     }
 
     public void run() {
-        for(int i=start; i <= end; i++)
+        for (int i = start; i <= end; i++) {
             sum += i;
+        }
     }
 
     public int getSum() {
